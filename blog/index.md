@@ -91,7 +91,6 @@ To prove the validity of our method, we conduct a swiss-style tournament among 1
 Figure 2 shows the ELO scores derived from the Auto Arena method. On the models included in Chatbot Arena (13 models out of 17), we could recover rankings with 92.3% accuracy.
 
 
-<!-- dedup and english only -->
 |  | Spearman Correlation|
 | -------- | ------- |
 | MMLU to Arena | 90.1% |

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Streamlit App</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            position: relative;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1;
+        }
+        header img {
+            width: 200px;
+        }
+        header h1 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+        }
+        iframe {
+            position: absolute;
+            top: 130px; /* Adjust this value based on the height of your header */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 130px); /* Adjust this value based on the height of your header */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div align="center">
+        <img src="logo.png" alt="Logo"/>
+    </div>
+    <h1>Auto Arena of LLMs: Automating LLM Evaluations with Agent Peer-battles and Committee Discussions</h1>
+    <nav>
+        <a href="https://auto-arena.github.io/samples" target="_blank">Debate Samples</a> |
+        <a href="https://auto-arena.github.io/blog/" target="_blank">Blog</a> |
+        <a href="https://arxiv.org/abs/2405.20267" target="_blank">Paper</a> |
+        <a href="https://github.com/DAMO-NLP-SG/Auto-Arena-LLMs" target="_blank">Code</a>
+    </nav>
+</header>
+<iframe src="https://auto-arena-leaderboard.hf.space" title="Leaderboard"></iframe>
+</body>
+</html>

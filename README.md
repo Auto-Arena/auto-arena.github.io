@@ -6,6 +6,6 @@ Auto Arena of LLMs: Automating LLM Evaluations with Agent Peer-battles and Commi
   <img src="logo.png" alt="Logo" width="200"/>
 </div>
 
-<div align="center">
-  <iframe src="https://auto-arena-leaderboard.hf.space" width="100%" height="600px" frameborder="0"></iframe>
+<div align="center" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
+  <iframe src="https://auto-arena-leaderboard.hf.space" style="width: 100%; height: 100vh; border: none;"></iframe>
 </div>

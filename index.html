@@ -9,11 +9,11 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
             font-family: Arial, sans-serif;
         }
         header {
-            position: relative;
             width: 100%;
             background-color: #f8f9fa;
             padding: 5px 0; /* Reduced padding */
@@ -37,10 +37,8 @@
             font-size: 16px;
         }
         iframe {
-            position: absolute;
-            left: 0;
+            flex: 1;
             width: 100%;
-            height: calc(100% - 90px); /* Adjusted height calculation */
             border: none;
         }
     </style>

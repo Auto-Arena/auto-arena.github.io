@@ -1,62 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Arena</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-        }
-        header {
-            width: 100%;
-            background-color: #f8f9fa;
-            padding: 5px 0; /* Reduced padding */
-            text-align: center;
-            z-index: 1;
-        }
-        header img {
-            width: 150px; /* Reduced width */
-        }
-        header h1 {
-            margin: 5px 0; /* Reduced margin */
-            font-size: 20px; /* Reduced font size */
-        }
-        nav {
-            margin: 5px 0; /* Reduced margin */
-        }
-        nav a {
-            margin: 0 5px; /* Reduced margin */
-            text-decoration: none;
-            color: #007bff;
-            font-size: 16px;
-        }
-        iframe {
-            flex: 1;
-            width: 100%;
-            border: none;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Auto Arena of LLMs: Automating LLM Evaluations with Agent Peer-battles and Committee Discussions">
+  <meta name="keywords" content="Auto, Arena, LMMs, Evaluation, Agent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Arena of LLMs</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon-32x32.png"> -->
+  <link rel="icon" href="logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/4.19.2/gradio.js"
+  ></script>
+
+  
+
 </head>
 <body>
-<header>
-    <div align="center">
-        <img src="logo.png" alt="Logo"/>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <img src="logo.png" alt="" style="height: 2.5em;">
+            <br>
+            Auto Arena of LLMs: Automating LLM Evaluations with Agent Peer-battles and Committee Discussions
+          </h1>
+<!--          <div class="is-size-5 publication-authors">-->
+<!--            <span class="author-block">-->
+<!--              <a href="https://ruochenzhao.github.io">Ruochen Zhao</a>,-->
+<!--            </span>-->
+<!--            <span class="author-block">-->
+<!--              <a href="https://isakzhang.github.io">Wenxuan Zhang</a>,-->
+<!--            </span>-->
+<!--            <span class="author-block">-->
+<!--              <a href="https://chiayewken.com/">Yew Ken Chia</a>,-->
+<!--            </span>-->
+<!--            <span class="author-block">-->
+<!--              <a href="https://zhaodeli.github.io">Deli Zhao</a>,-->
+<!--            </span>-->
+<!--            <span class="author-block">-->
+<!--              <a href="https://lidongbing.github.io">Lidong Bing*</a> (Corresponding Author)-->
+<!--            </span>-->
+<!--          </div>-->
+
+<!--          <div class="is-size-5 publication-authors">-->
+<!--            <span class="author-block">DAMO Academy, Alibaba Group</span>-->
+<!--          </div>-->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/Auto-Arena/Leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      🤗
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2405.20267"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Blog Link. -->
+              <span class="link-block">
+                <a href="https://auto-arena.github.io/blog/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Blog</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/DAMO-NLP-SG/Auto-Arena-LLMs"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Github</span>
+                  </a>
+              </span>
+              <!-- darasets Link. -->
+              <span class="link-block">
+                <a href="https://auto-arena.github.io/samples"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Debate Samples</span>
+                  </a>
+                </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
-    <h1>Auto Arena of LLMs: Automating LLM Evaluations with Agent Peer-battles and Committee Discussions</h1>
-    <nav>
-        <a href="https://huggingface.co/spaces/Auto-Arena/Leaderboard" target="_blank">Leaderboard</a> |
-        <a href="https://auto-arena.github.io/samples" target="_blank">Debate Samples</a> |
-        <a href="https://auto-arena.github.io/blog/" target="_blank">Blog</a> |
-        <a href="https://arxiv.org/abs/2405.20267" target="_blank">Paper</a> |
-        <a href="https://github.com/DAMO-NLP-SG/Auto-Arena-LLMs" target="_blank">Code</a>
-    </nav>
-</header>
-<iframe src="https://auto-arena-leaderboard.hf.space" title="Leaderboard"></iframe>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h4 class="subtitle has-text-centered">
+        We present Auto Arena of LLMs, a completely automated large language model (LLM) evaluation framework that comprehensively investigates an LLM’s capabilities by employing various LLM agents in peer-battles and committee discussions.
+        On the models that are included in Chatbot Arena, we can recover human preference scores with 94.5% correlation, which exceeds all current benchmarks.
+<!--        🔥<span style="color: #ff3860">[NEW!]</span>-->
+<!--        <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5">SeaLLM-7B-v2.5</a> is released with SoTA in world knowledge and math reasoning.-->
+<!--        <br>-->
+<!--        🔥<span style="color: #ff3860">[HOT!]</span>-->
+<!--        <a href="https://huggingface.co/SeaLLMs/SeaLMMM-7B-v0.1">SeaLMMM-7B-v0.1</a> is introduced with <b>Multimodal</b> Multilingual capabilities in SEA languages.-->
+      </h4>
+      <gradio-app src="https://auto-arena-leaderboard.hf.space"></gradio-app>
+    </div>
+  </div>
+</section>
+
+
+<!--<section class="section" id="BibTeX">-->
+<!--  <div class="container is-max-desktop content">-->
+<!--    <h2 class="title">BibTeX</h2>-->
+<!--    <p>-->
+<!--      If you find our project useful, we hope you would kindly star our repo and cite our work as follows.-->
+<!--      <br>-->
+<!--      Corresponding Author: <a href= "mailto: l.bing@alibaba-inc.com">l.bing@alibaba-inc.com</a>-->
+<!--    </p>-->
+<!--    <pre><code>@article{damonlpsg2023seallm,-->
+<!--  author = {Xuan-Phi Nguyen*, Wenxuan Zhang*, Xin Li*, Mahani Aljunied*, Weiwen Xu, Hou Pong Chan,-->
+<!--            Zhiqiang Hu, Chenhui Shen^, Yew Ken Chia^, Xingxuan Li, Jianyu Wang,-->
+<!--            Qingyu Tan, Liying Cheng, Guanzheng Chen, Yue Deng, Sen Yang,-->
+<!--            Chaoqun Liu, Hang Zhang, Lidong Bing},-->
+<!--  title = {SeaLLMs - Large Language Models for Southeast Asia},-->
+<!--  year = 2023,-->
+<!--  Eprint = {arXiv:2312.00738},-->
+<!--}-->
+<!--    </code></pre>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2312.00738.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/DAMO-NLP-SG/Auto-Arena-LLMs" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            CC BY-SA 4.0 License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
